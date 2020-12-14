@@ -1,0 +1,767 @@
+@import "./resets";
+@import "./variables";
+
+@mixin flexBo1 {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 10px;
+}
+@mixin flexBox2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main {
+  width: 100%;
+
+  .top-header-container {
+    position: fixed;
+    z-index: 99999;
+    width: 100%;
+    top: 0;
+    .top-header-wrapper {
+      width: 100%;
+      min-height: 9vh;
+      background-color: $primary-color;
+      padding-left: 20px;
+      padding-right: 20px;
+
+      .inner-top-header-wrapper {
+        max-width: 1140px;
+        margin: auto;
+        min-height: 8.7vh;
+        @include flexBox2;
+        align-items: center;
+        color: #ebe8e8;
+
+        .top-social-link a {
+          color: #ebe8e8;
+          padding: 0 5px;
+        }
+      }
+
+      @media (max-width: 800px) {
+        display: none;
+      }
+    }
+    .wrapper-header {
+      background-color: $tertiary-color;
+      border-bottom: 1px solid #c6c6c9;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      width: 100%;
+      padding-left: 20px;
+      padding-right: 20px;
+
+      .nav-bar {
+        max-width: 1140px;
+        margin: auto;
+        @include flexBox2;
+
+        .logo img {
+          width: 45px;
+        }
+
+        .nav-links {
+          display: flex;
+
+          li {
+            list-style: none;
+
+            a {
+              text-decoration: none;
+              color: $secondary-color;
+              font-size: 0.8rem;
+              line-height: 50px;
+              margin: 0 20px;
+              font-weight: bold;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+            }
+          }
+          .auth-btn {
+            padding: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            border-radius: 10px;
+            transition: 0.5s;
+            letter-spacing: 1px;
+            box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.384);
+
+            &:hover {
+              background-color: $secondary-color;
+              color: $tertiary-color;
+            }
+            @media (max-width: 800px) {
+              margin-top: 20px;
+              border: none;
+              padding: 0 20px;
+            }
+          }
+          .signup {
+            position: relative;
+            left: 20px;
+            background-color: $primary-color;
+            color: $tertiary-color;
+            &:hover {
+              background-color: $secondary-color;
+              color: $tertiary-color;
+            }
+            @media (max-width: 800px) {
+              left: 0;
+            }
+          }
+          .signupLog {
+            position: relative;
+            left: 20px;
+            &:hover {
+              background-color: $secondary-color;
+              color: $tertiary-color;
+            }
+            @media (max-width: 800px) {
+              left: 0;
+            }
+          }
+          .loginLink {
+            position: relative;
+            background-color: $primary-color;
+            color: $tertiary-color;
+            &:hover {
+              background-color: $secondary-color;
+              color: $tertiary-color;
+            }
+            @media (max-width: 800px) {
+              left: 0;
+            }
+          }
+          @media (max-width: 850px) {
+            display: block;
+            background-color: $tertiary-color;
+            position: absolute;
+            width: 85%;
+            height: 100vh;
+            left: -100%;
+            top: 0;
+            transition: 0.5s ease-in-out;
+            padding-top: 100px;
+
+            li {
+              a {
+                border-bottom: 1px solid #d3d1d1;
+                padding-left: 40px;
+                height: 50px;
+                line-height: 50px;
+                padding: 0 20px;
+                display: block;
+              }
+            }
+            &.show-nav {
+              left: 0;
+            }
+          }
+        }
+
+        .hamburger {
+          display: none;
+          height: 35px;
+          margin-top: 5px;
+          cursor: pointer;
+
+          .bar1,
+          .bar2,
+          .bar3 {
+            width: 30px;
+            height: 3px;
+            background-color: $primary-color;
+            margin: 6px 0;
+            transition: 0.4s;
+          }
+          .bar2 {
+            width: 25px;
+          }
+          &.change .bar1 {
+            transform: rotate(-45deg) translate(-8px, 6px);
+          }
+
+          &.change .bar2 {
+            opacity: 0;
+          }
+
+          &.change .bar3 {
+            transform: rotate(45deg) translate(-8px, -6px);
+          }
+
+          @media (max-width: 800px) {
+            display: block;
+          }
+        }
+      }
+      @media (max-width: 800px) {
+        top: 0;
+        .logo img {
+          z-index: 5;
+          position: relative;
+        }
+      }
+    }
+  }
+  section {
+    min-height: 70vh;
+    background-color: $primary-color;
+
+    .inner-auth-cont {
+      padding-top: 50px;
+      padding-bottom: 80px;
+      margin-bottom: 50px;
+      padding-left: 20px;
+      padding-right: 20px;
+      margin: 20px;
+      max-width: 800px;
+      min-height: 65vh;
+      margin: auto;
+      .article {
+        h2 {
+          margin-bottom: 15px;
+          font-size: 1.5rem;
+          color: $primary-color;
+
+          @media (max-width: 300px) {
+            font-size: 2rem;
+          }
+        }
+        p {
+          color: $secondary-color;
+        }
+      }
+
+      .reg-form {
+        form {
+          .input-field {
+            padding-top: 40px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 30px;
+            grid-row-gap: 60px;
+
+            .form-field {
+              .is-floating-label {
+                position: relative;
+                margin-bottom: 15px;
+                input {
+                  width: 100%;
+                  border: 0;
+                  padding: 3px 0;
+                  padding-left: 30px;
+                  padding-right: 30px;
+                  box-shadow: none;
+                  outline: 0;
+                  border-bottom: 2px solid $primary-color;
+                  position: absolute;
+                  left: 0;
+                  background-color: transparent;
+
+                  &:focus {
+                    border-bottom: 2px solid $secondary-color;
+                  }
+                }
+
+                /* 
+                 * Floating label styles
+                 * Based on http://jsfiddle.net/RyanWalters/z9ymd852/
+                 */
+                label {
+                  // opacity: 0.3;
+                  pointer-events: none;
+                  position: absolute;
+                  transform: translate3d(0, 0, 0) scale(1);
+                  transform-origin: left top;
+                  transition: 0.4s;
+                  color: grey;
+                  top: -5px;
+                  margin-left: 30px;
+                }
+                &.is-focused label {
+                  transform: translateY(-20px) scale(1);
+                }
+                .val_error {
+                  color: #ff5f13;
+                  position: relative;
+                  top: 30px;
+                }
+              }
+            }
+            .text-area {
+              label {
+                padding-left: 15px;
+                padding-right: 15px;
+                margin-left: 15px;
+                background-color: $tertiary-color;
+                // margin-top: 10px;
+                color: red;
+              }
+              textarea {
+                width: 100%;
+                border: 0;
+                padding: 10px 0;
+                padding-right: 40px;
+                box-shadow: none;
+                padding-left: 15px;
+                border-radius: 10px;
+                outline: 0;
+                resize: none;
+                border: 2px solid $primary-color;
+                background-color: transparent;
+
+                &:focus {
+                  border: 2px solid $secondary-color;
+                }
+              }
+              .fa-comment {
+                float: right;
+                margin-top: -190px;
+                margin-right: 18px;
+                line-height: 1.3;
+                // pos
+              }
+            }
+            .Cr_icon {
+              margin-left: 5px;
+              position: relative;
+              top: -4px;
+            }
+            .hidePassword_icon {
+              margin-left: 5px;
+              position: relative;
+              top: -4px;
+              right: 5px;
+              float: right;
+              cursor: pointer;
+            }
+
+            @media (max-width: 450px) {
+              grid-template-columns: 1fr;
+            }
+          }
+          // .contactus-field {
+          //   display: grid;
+          //   grid-template-columns: 1fr;
+          //   grid-column-gap: 30px;
+          //   grid-row-gap: 60px;
+          // }
+          .login-field {
+            max-width: 350px;
+            display: grid;
+            grid-template-columns: 1fr;
+          }
+
+          .form-agree-input {
+            margin-top: 30px;
+            /* The container */
+            .radioBtn {
+              display: block;
+              position: relative;
+              padding-left: 50px;
+              margin-bottom: 12px;
+              cursor: pointer;
+              font-size: 1rem;
+              user-select: none;
+              color: $secondary-color;
+            }
+
+            /* Hide the browser's default checkbox */
+            .radioBtn input {
+              position: absolute;
+              opacity: 0;
+              cursor: pointer;
+              height: 0;
+              width: 0;
+            }
+
+            /* Create a custom checkbox */
+            .checkmark {
+              position: absolute;
+              top: 0;
+              left: 0;
+              height: 25px;
+              width: 25px;
+              background-color: $primary-color;
+              border-radius: 15px;
+            }
+
+            /* On mouse-over, add a grey background color */
+            .radioBtn:hover input ~ .checkmark {
+              background-color: #2196f3;
+            }
+
+            /* When the checkbox is checked, add a blue background */
+            .radioBtn input:checked ~ .checkmark {
+              background-color: $primary-color;
+              border-radius: 15px;
+            }
+
+            /* Create the checkmark/indicator (hidden when not checked) */
+            .checkmark:after {
+              content: "";
+              position: absolute;
+              display: none;
+            }
+
+            /* Show the checkmark when checked */
+            .radioBtn input:checked ~ .checkmark:after {
+              display: block;
+            }
+
+            /* Style the checkmark/indicator */
+            .radioBtn .checkmark:after {
+              left: 9px;
+              top: 5px;
+              width: 5px;
+              height: 10px;
+              border: solid white;
+              border-width: 0 3px 3px 0;
+              transform: rotate(45deg);
+            }
+
+            .forgot-pswd-link {
+              text-decoration: none;
+              color: $secondary-color;
+              font-weight: bold;
+
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+
+          .form-btn {
+            margin-top: 70px;
+            button {
+              padding: 15px;
+              margin-top: 30px;
+              display: block;
+              width: 100%;
+              border: none;
+              border-radius: 15px;
+              font-size: 1rem;
+              cursor: pointer;
+              background-color: $primary-color;
+              color: $tertiary-color;
+              transition: 0.5s;
+              text-transform: uppercase;
+              outline: none;
+
+              &:hover {
+                background-color: $secondary-color;
+              }
+            }
+          }
+          .login-btn {
+            max-width: 350px;
+            margin: auto;
+          }
+        }
+      }
+      .address_info {
+        padding: 10px;
+        i {
+          color: $secondary-color;
+        }
+        h1 {
+          font-size: 2.67rem;
+          font-weight: 600;
+          font-style: normal;
+          line-height: 1.15em;
+          text-transform: none;
+          letter-spacing: -0.02em;
+          color: $secondary-color;
+        }
+        p {
+          font-size: 0.866em;
+          line-height: 1.846em;
+          color: #afafaf;
+        }
+        .contacus_address-no {
+          display: flex;
+          gap: 10px;
+        }
+      }
+      .contactus-form {
+        padding: 10px;
+
+        .article {
+          margin-top: 30px;
+
+          h1 {
+            font-size: 2em;
+            color: $primary-color;
+          }
+          p {
+            font-size: 0.8em;
+          }
+        }
+      }
+    }
+    .contactus-auth-cont {
+      max-width: 1140px;
+      display: flex;
+      gap: 20px;
+    }
+    .login-auth {
+      max-width: 350px;
+    }
+
+    .subscribe-containers {
+      padding-left: 20px;
+      padding-right: 20px;
+      max-width: 1140px;
+      padding-top: 80px;
+      padding-bottom: 80px;
+      margin: auto;
+      @include flexBox2;
+
+      .article {
+        h2 {
+          margin-bottom: 15px;
+          letter-spacing: 3px;
+          font-size: 2.5rem;
+          color: #ff5f13;
+
+          @media (max-width: 300px) {
+            font-size: 2rem;
+          }
+        }
+        .call-underline {
+          max-width: 50px;
+          border: 1px solid #455a64;
+          position: relative;
+          top: -10px;
+        }
+        p {
+          font-size: 1.5rem;
+          letter-spacing: 2px;
+          line-height: 1.5;
+          color: #f1f0f0;
+          @media (max-width: 300px) {
+            font-size: 1.4rem;
+          }
+        }
+      }
+      .image-subscr {
+        // position: relative;
+        // height: 300px;
+        // top: -200px;
+        .subscr-gif {
+          max-width: 100%;
+        }
+        @media (max-width: 850px) {
+          top: 0;
+          height: 100%;
+        }
+      }
+
+      .subscribe-from {
+        h2 {
+          letter-spacing: 3px;
+          font-size: 1rem;
+          color: #ff5f13;
+          @media (max-width: 300px) {
+            font-size: 1rem;
+          }
+        }
+        .subscr-underline {
+          max-width: 50px;
+          border: 1px solid #455a64;
+          position: relative;
+          top: 10px;
+          margin-bottom: 20px;
+        }
+        input {
+          border-radius: 5px;
+          border: none;
+        }
+
+        input[type="email"] {
+          padding: 10px;
+          margin-top: 10px;
+          // margin-bottom: 10px;
+          outline: none;
+          width: 230px;
+
+          &:focus {
+            border: 1px solid #ff5f13;
+          }
+        }
+        input[type="submit"] {
+          padding: 10px;
+          width: 100px;
+          cursor: pointer;
+          background-color: $tertiary-color;
+          transition: 0.5s;
+          outline: none;
+          margin-bottom: 20px;
+
+          &:hover {
+            background-color: #ff5f13;
+            color: $secondary-color;
+          }
+        }
+        .val_error {
+          color: #ff5f13;
+          font-size: 0.8em;
+          margin-bottom: 10px;
+          margin-top: 10px;
+        }
+      }
+      @media (max-width: 850px) {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 50px;
+      }
+    }
+    .footer-container {
+      max-width: 1140px;
+      margin: auto;
+      border-bottom: 1px solid #272626;
+      min-height: 40vh;
+      padding-right: 20px;
+      padding-left: 20px;
+      padding-bottom: 10px;
+      color: #f1f0f0;
+      @include flexBox2;
+      gap: 20px;
+
+      .footer-link {
+        padding-bottom: 20px;
+        width: 100%;
+        padding-left: 5px;
+
+        h4 {
+          letter-spacing: 1px;
+          margin-bottom: 30px;
+          font-size: 18px;
+        }
+
+        ul li {
+          list-style: none;
+          margin: 0px 0px 15px;
+        }
+
+        ul li a {
+          text-decoration: none;
+          color: #f1f0f0;
+        }
+        @media (max-width: 850px) {
+          padding-top: 30px;
+          border-top: 1px solid #272626;
+        }
+      }
+
+      .footer-logo-discr {
+        width: 100%;
+        padding-left: 5px;
+        padding-right: 70px;
+        padding-bottom: 20px;
+
+        .footer-logo {
+          margin-bottom: 20px;
+          max-width: 190px;
+
+          img {
+            width: 45px;
+          }
+          h3 {
+            color: $tertiary-color;
+            float: right;
+            // margin-right: 100px;
+            margin-top: 12px;
+          }
+          @media (max-width: 450px) {
+            max-width: 170px;
+          }
+        }
+        .footer-article {
+          margin-bottom: 20px;
+        }
+        .footer-social {
+          i {
+            font-size: 18px;
+          }
+          a {
+            color: #ff5f13;
+            margin: 0px 10px 0px;
+          }
+        }
+        @media (max-width: 850px) {
+          // padding-bottom: 50px;
+        }
+      }
+      @media (max-width: 850px) {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 50px;
+      }
+    }
+    .bottom-footer-container {
+      max-width: 1140px;
+      padding-left: 20px;
+      padding-right: 20px;
+      margin: auto;
+      min-height: 9vh;
+      padding-top: 30px;
+      text-align: center;
+      color: #f1f0f0;
+
+      a {
+        color: #ff5f13;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  .auth-container {
+    background-color: $tertiary-color;
+    margin-top: 128px;
+    @media (max-width: 800px) {
+      margin-top: 70px;
+    }
+    .contactus_header {
+      text-align: center;
+      position: relative;
+      top: 40px;
+    }
+    .G-map {
+      padding: 10px;
+      width: 100%;
+
+      iframe {
+        width: 100%;
+      }
+    }
+  }
+  .login-container {
+    @media (max-width: 800px) {
+      margin-bottom: 20px;
+      min-height: 20vh;
+    }
+  }
+  .subscribe {
+    min-height: 100%;
+    background-color: $secondary-color;
+  }
+  .services,
+  .how-to-order,
+  .partners {
+    background-color: $tertiary-color;
+  }
+  .footer {
+    // margin-top: 0;
+    padding-top: 80px;
+    padding-bottom: 50px;
+    min-height: 100%;
+    background-color: #121212;
+  }
+}

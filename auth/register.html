@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create your Osave Logitics Account | Delivery Service</title>
+    <link rel="stylesheet" href="/css/auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <script src="https://kit.fontawesome.com/1a13972aeb.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div class="main">
+        <div class="top-header-container">
+            <div class="top-header-wrapper">
+                <div class="inner-top-header-wrapper">
+                    <div class="top-info">
+                        Phone: +234
+                        081-3377-8899&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email:
+                        noreply@yourdomain.com
+                    </div>
+                    <div class="top-social-link">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fas fa-globe"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper-header">
+                <nav class="nav-bar">
+                    <div class="logo">
+                        <a href="/index.html"><img src="../img/LOGO.png"></a>
+                    </div>
+                    <ul class="nav-links">
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="/aboutus.html">About Us</a></li>
+                        <li><a href="/contactus.html">Contact Us</a></li>
+                        <li><a class="auth-btn signup" href="register.html">Sign Up</a></li>
+                        <li><a class="auth-btn" href="login.html">Login</a></li>
+                    </ul>
+                    <div class="hamburger" onclick="myCloseBar(this)">
+                        <div class="bar1 bars"></div>
+                        <div class="bar2 bars"></div>
+                        <div class="bar3 bars"></div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <section class="auth-container">
+            <div class="inner-auth-cont">
+                <div class="article">
+                    <h2>Create Account</h2>
+                </div>
+                <div class="reg-form">
+                    <form action="" method="POST" name="formControl" onsubmit="return validateForm()" novalidate>
+                        <div class="input-field">
+                            <div class="form-field">
+                                <div class="is-floating-label">
+                                    <label>First Name</label>
+                                    <input type="text" id="firstName" name="fname" />
+                                    <i class="far Cr_icon fa-user-circle icon"></i>
+                                    <div id="firstname_error" class="val_error"></div>
+                                </div>
+                            </div>
+                            <div class="form-field">
+                                <div class="is-floating-label">
+                                    <label>Last Name</label>
+                                    <input type="text" id="lastName" name="lname" />
+                                    <i class="far Cr_icon fa-user-circle icon"></i>
+                                    <div id="lastname_error" class="val_error"></div>
+                                </div>
+                            </div>
+                            <div class="form-field">
+                                <div class="is-floating-label">
+                                    <label>Email Address</label>
+                                    <input type="text" id="email" name="email" />
+                                    <i class="far Cr_icon fa-envelope icon"></i>
+                                    <div id="email_error" class="val_error"></div>
+                                </div>
+                            </div>
+                            <div class="form-field">
+                                <div class="is-floating-label">
+                                    <label>Phone</label>
+                                    <input type="tel" id="phoneNumber" name="phone" />
+                                    <i class="fas Cr_icon fa-mobile-alt icon"></i>
+                                    <div id="phoneNumber_error" class="val_error"></div>
+                                </div>
+                            </div>
+                            <div class="form-field">
+                                <div class="is-floating-label">
+                                    <label>Password</label>
+                                    <input type="password" class="showHide" id="password" name="password" />
+                                    <i class="fas Cr_icon fa-key icon"></i>
+                                    <i id="toggler"class="fas hidePassword_icon fa-eye"></i>
+                                    <div id="password_error" class="val_error"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-btn">
+                            <button type="submit" name="register">Create Account</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="subscribe">
+            <div class="subscribe-containers">
+                <div class="article">
+                    <h2>Call Center</h2>
+                    <hr class="call-underline">
+                    </hr>
+                    <p>+234 081-3377-8899</p>
+                    <p>+234 081-0445-8899</p>
+                    <p>noreply@yourdomain.com</p>
+                </div>
+                <div class="image-subscr">
+                    <img class="subscr-gif" src="../img/ezgif.com-gif-maker.gif" alt="">
+                </div>
+                <div class="subscribe-from">
+                    <h2>Newsletter Sign Up</h2>
+                    <hr class="subscr-underline">
+                    </hr>
+                    <form action="" method="" onsubmit="return validateNewsletterForm()" novalidate>
+                        <input type="email" name="newletter" placeholder="Email Address" id="subscrEmail"><br />
+                        <div id="subscrEmail_error" class="val_error"></div>
+                        <input type="submit" class="subscr-btn" value="Subscribe">
+                    </form> 
+                </div>
+            </div>
+        </section>
+        <section class="footer">
+            <div class="footer-container">
+                <div class="footer-logo-discr">
+                    <div class="footer-logo">
+                        <a href="/index.html"><img src="../img/footer-logo.png" alt=""></a>
+                        <h3>OsAve</h3>
+                    </div>
+                    <div class="footer-article">
+                        <p>GThe trade war currently ensuing between te US anfd several natxions around
+                            thdhe globe, most fiercely with.</p>
+                    </div>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fas fa-globe"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-link">
+                    <h4>COMPANY</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Company</a></li>
+                        <li><a href="#"> Press & Blog</a></li>
+                        <li><a href="#"> Privacy Policy</a></li>
+                </div>
+                <div class="footer-link">
+                    <h4>OPEN HOUR</h4>
+                    <ul>
+                        <li>Monday 11am-7pm</li>
+                        <li>Tuesday-Friday 11am-8pm</li>
+                        <li>Saturday 10am-6pm</li>
+                        <li>Sunday 11am-6pm</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bottom-footer-container">
+                Copyright &copy; OsAve Logistic
+                <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made
+                by <a href="https://eaxysunshinetech.netlify.app/" target="_blank">Eaxysunshine</a>
+            </div>
+        </section>
+    </div>
+
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+    <script src="../js/scripts.js"></script>
+    <script src="../js/form-validator.js"></script>
+    <script>
+        /**
+ * On: focus blur => Floating label
+ * Based on http://jsfiddle.net/RyanWalters/z9ymd852/
+ */
+        $('.is-floating-label input, .is-floating-label textarea').on('focus blur', function (e) {
+            $(this).parents('.is-floating-label').toggleClass('is-focused', (e.type === 'focus' || this.value.length > 0));
+        }).trigger('blur');
+    </script>
+</body>
+
+</html>
